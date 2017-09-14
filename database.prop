@@ -1,0 +1,4 @@
+driver = org.firebirdsql.jdbc.FBDriver
+dbURL  = jdbc:firebirdsql:class.mmcs.sfedu.ru/3050:/fbdata/39/zavman.fdb ?encoding=UNICODE_FSS
+user   = IT39
+password = it39

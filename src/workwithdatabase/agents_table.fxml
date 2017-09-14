@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" type="GridPane" vgap="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="workwithdatabase.AgentsTableController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <TableView fx:id="agentsTable" editable="true" prefHeight="300.0" GridPane.columnSpan="3">
+            <columns>
+                <TableColumn fx:id="nameColumn" editable="true" onEditCommit="#onEditName" prefWidth="219.0" resizable="false" text="Имя">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name" />
+                    </cellValueFactory>
+                    <cellFactory>
+                        <TextFieldTableCell fx:factory="forTableColumn" />
+                    </cellFactory>
+                </TableColumn>
+                <TableColumn fx:id="phoneColumn" editable="true" onEditCommit="#onEditPhone" prefWidth="150.0" resizable="false" text="Номер телефона">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="phone" />
+                    </cellValueFactory>
+                    <cellFactory>
+                        <TextFieldTableCell fx:factory="forTableColumn" />
+                    </cellFactory>
+                </TableColumn>
+                <TableColumn fx:id="cityColumn" editable="true" onEditCommit="#onEditCity" prefWidth="219.0" resizable="false" text="Город">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="city" />
+                    </cellValueFactory>
+                    <cellFactory>
+                        <TextFieldTableCell fx:factory="forTableColumn" />
+                    </cellFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <Label text="Имя" GridPane.rowIndex="1" />
+        <Label text="Номер телефона" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Label text="Город" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <TextField fx:id="name" promptText="Имя" GridPane.rowIndex="2" />
+        <TextField fx:id="phone" promptText="Номер телефона" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <TextField fx:id="city" promptText="Город" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <HBox spacing="10.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+            <children>
+                <Region maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" HBox.hgrow="ALWAYS" />
+                <Button fx:id="add" mnemonicParsing="false" onAction="#onAddAgents" text="Добавить" />
+                <Button fx:id="delete" disable="true" mnemonicParsing="false" onAction="#onDeleteAgents" text="Удалить" />
+            </children>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+    </padding>
+</fx:root>

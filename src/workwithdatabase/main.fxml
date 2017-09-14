@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="workwithdatabase.MainController">
+    <children>
+        <Button mnemonicParsing="false" onAction="#onGoodsTable" text="Справочник товаров" prefWidth="200.0"/>
+        <Button mnemonicParsing="false" onAction="#onWarehouseTable" text="Справочник складов" prefWidth="200.0"/>
+        <Button mnemonicParsing="false" onAction="#onAgentsTable" text="Справочник поставщиков" prefWidth="200.0"/> 
+    </children>
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+    </padding>
+</VBox>
